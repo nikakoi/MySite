@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<style>
+    h1 {
+        font-size: 2em;
+        color: rgb(6, 109, 206);
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 2em;
+        color: rgb(6, 109, 206);
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    body {
+        background-color: rgb(196, 230, 230);
+        text-align: center;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .status {
+        color: #000000;
+        font-weight: bold;
+    }
+
+    p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+
+    li {
+        position: relative;
+        color: rgb(6, 109, 206);
+    }
+
+    ul {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-top: 2px;
+    }
+
+    button1,
+    button2,
+    button3 {
+        align-items: center;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
+        box-sizing: border-box;
+        color: rgb(6, 109, 206);
+        cursor: pointer;
+        display: inline-flex;
+        flex: 1 1 auto;
+        font-family: Inter, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 1;
+        margin: 0;
+        outline: none;
+        padding: 1rem 1.2rem;
+        text-align: center;
+        text-decoration: none;
+        transition: box-shadow .2s, -webkit-box-shadow .2s;
+        white-space: nowrap;
+        border: 0;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    button1:hover {
+        box-shadow: rgb(6, 109, 206) 0 0 0 3px, transparent 0 0 0 0;
+    }
+
+    button2:hover {
+        box-shadow: rgb(6, 109, 206) 0 0 0 3px, transparent 0 0 0 0;
+    }
+
+    button3:hover {
+        box-shadow: rgb(6, 109, 206) 0 0 0 3px, transparent 0 0 0 0;
+    }
+
+    header {
+        border-bottom: 3px solid;
+        border-color: rgb(6, 109, 206);
+    }
+
+    .text {
+        color: rgb(6, 109, 206);
+        margin-top: 10px;
+        text-shadow: 1px 2px white;
+    }
+
+    hr {
+        border: 2px solid rgb(6, 109, 206);
+    }
+
+    .biography {
+        margin-top: 3cm;
+        margin-bottom: 5cm;
+    }
+
+    .hobbies {
+        margin-top: 3cm;
+        margin-bottom: 3cm;
+    }
+
+    .text2 {
+        text-align: center;
+        color: rgb(6, 109, 206);
+        margin-top: 50px;
+        width: 50%;
+        margin-left: 25%;
+        text-shadow: 1px 2px white;
+
+    }
+
+    .photo3,
+    .photo4 {
+        height: 284px;
+        width: 20%;
+        margin-top: 40px;
+        border: 1px solid #BFBFBF;
+        padding: 10px 10px 20px 10px;
+        background-color: white;
+        box-shadow: 10px 10px 5px #aaaaaa;
+        -ms-transform: rotate(7deg);
+        -webkit-transform: rotate(7deg);
+        transform: rotate(7deg);
+        margin-bottom: 3cm;
+    }
+
+    .photo3 {
+        -ms-transform: rotate(-8deg);
+        -webkit-transform: rotate(-8deg);
+        transform: rotate(-8deg);
+
+    }
+
+    .photo1 {
+        width: 25%;
+        border-radius: 25px;
+    }
+
+    .photo2 {
+        margin-top: 3cm;
+        height: 284px;
+        width: 25%;
+        margin-top: 40px;
+        border: 1px solid #BFBFBF;
+        padding: 10px 10px 20px 10px;
+        background-color: white;
+        box-shadow: 10px 10px 5px #aaaaaa;
+    }
+
+    canvas {
+        width: 100%;
+    }
+
+    #myBtn {
+        position: fixed;
+        top: 20px;
+        right: 1px;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        color: rgb(6, 109, 206);
+        cursor: pointer;
+    }
+
+    #myBtn:hover {
+        background-color: rgb(6, 109, 206);
+    }
+
+    #myBtn2 {
+        position: fixed;
+        top: 59px;
+        right: 1px;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        color: rgb(6, 109, 206);
+        cursor: pointer;
+    }
+
+    #myBtn2:hover {
+        background-color: rgb(6, 109, 206);
+    }
+</style>
+<script>
+    function ShowDiv() {
+        var elmntToView = document.getElementById("biography");
+        elmntToView.scrollIntoView();
+    }
+
+    function ShowDiv2() {
+        var elmntToView = document.getElementById("Hobbies");
+        elmntToView.scrollIntoView();
+    }
+
+    function ShowDiv3() {
+        var elmntToView = document.getElementById("Skills");
+        elmntToView.scrollIntoView();
+    }
+</script>
+<title>
+    Hello!
+</title>
+<header>
+    <h1>Nikoloz Eradze</h1>
+
+    <button1 onclick="ShowDiv()">Biography</button1>
+    <button2 onclick="ShowDiv2()">Hobbies</button2>
+    <button3 onclick="ShowDiv3()">Skills</button3>
+
+</header>
+
+<body>
+    <button onclick="function1()" id="myBtn"><img src="facebook.png"/></button>
+    <button onclick="function2()" id="myBtn2"><img src="instagram.png"/></button>
+
+
+    <div class="status">Student of Business and Technology University </div>
+    <p>
+        Hello!, I am nikoloz Eradze and I am Student of Business and Technology University.
+
+    </p>
+    <img class="photo1" src="photo1.jpg" alt="me">
+
+    <h2>Contact information</h2>
+    <ul>
+        <li>Email: <a href="mailto:Nikoloz.eradze.1@btu.edu.ge">nikoloz.eradze.1@btu.edu.ge</a></li>
+        <li>Tel: 574050306</li>
+    </ul>
+
+
+    <div id="biography" class="biography">
+        <hr>
+
+        <img class="photo2" src="childhood.jpg" alt="Childhood"><br>
+
+        <div class="text">
+            <p1>
+                დავიბადე 26 ოქტომბერს 2002 წელს. ვცხოვრობ თბილისში.
+            </p1><br>
+
+            <p4>სწავლა დავიწყე გრიგოლ კობახიძის 77-ე საჯარო სკოლაში, შემდეგ გავაგრძელე ილია ვეკუას სახელობის ფიზიკა-მათემატიკურ სკოლაში.
+            </p4><br>
+            <p5>
+                ადრეული ასაკიდან ძალინ მომწონს კომპიუტერთან თამაში და შემიძლია რამდენიმე დღე გავათენო
+            </p5>
+            <br>
+            <p3>უკვე 1 წელია ვმუშობ GreenWay Georgia-ში, Junior Software Support Specialist-ის პოზიციაზე. </p3><br>
+            <br>
+        </div>
+        <hr>
+
+        <div id="Hobbies" class="Hobbies">
+            <h1>Hobbies</h1>
+            <div class="text2">
+                <p1>რაც შეეხება ჩემს ინტერესის სფეროებს</p1><br>
+                <p2>ძალიან მიყვარს ელექტრონული მუსიკა</p2><br>
+                <p3>მეგობრებთან ერთად გართობა</p3><br>
+                <p4>ხინკალი და ლუდი</p4><br>
+                <br>
+                <P5>რაც შეეხება სასაცილო ფაქტებს ჩემზე</P5>
+                <p6>თუ რამე ადამიანს შეუძლია რამე დაუშავოს თავის თავს მე ყელაფერი მემართება მარჯვენა მხარეს
+                    აგისხნით რას ვგულისხმობ:
+                </p6><br>
+                     <br>
+                <p7>მარჯვენა ფეხი ორჯერ მაქვს მოტეხილი</p7><br>
+                <p8>მარჯვენა ხელი ერთხელ მოტეხილი და ერთხელ ნაღრძობი</p8><br>
+                <p9>მარჯვენა ყურის ანთება მქონდა და რაღაც პერიოდი სმენა დაქვეითებული მქონდა</p9>
+
+            </div>
+            <div>
+                <img class="photo3" src="bassiani.jpeg">
+                <img class="photo4" src="friends.jpg">
+            </div>
+
+
+        </div>
+        <hr>
+        <div id="Skills" class="Skills">
+            <h1>Skills</h1>
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+            <script>
+                var xValues = ["Python", "C#", "HTML", "JavaScript", "CSS", "MC Office :D"];
+                var yValues = [10, 7, 9, 6, 9, 4, , 0];
+                var barColors = ["red", "green", "blue", "orange", "brown", "yellow","black"];
+
+                new Chart("myChart", {
+                    type: "bar",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                        }
+
+                    }
+                });
+            </script>
+        </div>
+        <script>
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            function function1() {
+                window.open("https://www.facebook.com/nika.eradze.33/")
+            }
+
+            function function2() {
+                window.open("https://www.instagram.com/nikoloz_eradze/")
+            }
+        </script>
+</body>
+
+</html>
